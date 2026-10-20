@@ -184,15 +184,15 @@ select { flex: 0 1 132px; }
     width: 28px;
     height: 24px;
     border-radius: 4px 4px 2px 2px;
-    background: #ffb744;
-    box-shadow: -5px 4px 0 -1px #ffb744, 5px 4px 0 -1px #ffb744;
+    background: var(--clothing-color);
+    box-shadow: -5px 4px 0 -1px var(--clothing-color), 5px 4px 0 -1px var(--clothing-color);
     content: "";
 }
 
-.person.woman { background: linear-gradient(90deg, transparent 29%, #ffb744 29% 71%, transparent 71%) 0 48px / 100% 30px no-repeat; }
-.person.woman::after { clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%); }
-.person.man { background: linear-gradient(90deg, transparent 29%, #ffb744 29% 43%, transparent 43% 57%, #ffb744 57% 71%, transparent 71%) 0 48px / 100% 30px no-repeat; }
-.person.man::after { border-radius: 3px; }
+.person.mujer, .person.hombre { background: linear-gradient(90deg, transparent 29%, var(--clothing-color) 29% 71%, transparent 71%) 0 48px / 100% 30px no-repeat; }
+.person.mujer { --clothing-color: #d94b79; }
+.person.hombre { --clothing-color: #2879b9; }
+.person.mujer::after, .person.hombre::after { clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%); }
 
 .person.here { filter: drop-shadow(0 0 7px rgb(37 130 56 / 48%)); }
 .client-label {
