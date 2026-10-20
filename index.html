@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f6f8">
+    <title>Cola del banco — Lista enlazada</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<main class="app">
+    <header class="page-header">
+        <h1><span aria-hidden="true">🏦</span> Cola del banco <span class="title-divider">—</span> <span class="subtitle">Lista enlazada</span></h1>
+    </header>
+
+    <section class="control-panel" aria-label="Controles de la fila">
+        <form class="controls" id="clientForm">
+            <label class="visually-hidden" for="clientName">Nombre del cliente</label>
+            <input type="text" id="clientName" placeholder="Nombre del cliente" autocomplete="off" required>
+            <label class="visually-hidden" for="clientGender">Género del cliente</label>
+            <select id="clientGender">
+                <option value="Mujer">👩 Mujer</option>
+                <option value="Hombre">👨 Hombre</option>
+            </select>
+            <button class="button button-add" type="submit">Llega cliente</button>
+            <button class="button button-serve" id="serveButton" type="button">Atender al primero</button>
+            <button class="button button-reset" id="resetButton" type="button">Resetear</button>
+        </form>
+
+        <div class="stats" aria-live="polite">
+            <span>En fila: <strong id="lblTam">0</strong></span>
+            <span>Atendidos: <strong id="lblServed">0</strong></span>
+        </div>
+    </section>
+
+    <section class="bank-floor" aria-label="Clientes esperando para ser atendidos">
+        <div class="queue-visualization" id="queueContainer"></div>
+        <div class="counter" aria-label="Caja de atención">
+            <span class="counter-sign">ATENCIÓN</span>
+            <div class="counter-front">CAJA</div>
+        </div>
+    </section>
+
+    <p class="console-output" id="consoleLog" role="status">Sistema de gestión inicializado.</p>
+</main>
+</body>
+</html>
